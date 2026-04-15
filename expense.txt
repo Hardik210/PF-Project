@@ -1,0 +1,8 @@
+Category:0
+ Amount:500
+Category:4
+ Amount:350
+Category:2
+ Amount:470
+Category:0
+ Amount:500
