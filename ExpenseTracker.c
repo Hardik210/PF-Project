@@ -29,11 +29,15 @@ int main(){
     char decision;
     Budget B;
     Expense E;
-    int Salary=15000;
+    int Salary;
     int totalBudget;
     int choice;
     FILE *fptr;
 
+    printf("Enter the Your Salary:");
+    scanf("%d",&Salary);
+
+printf("\n");
 while(1){
       do{
         printf("Enter budget for Shopping: ");
@@ -92,6 +96,7 @@ while(1){
         case 1:
         decision='Y';
         while(decision=='Y'){
+        printf("\n");
         printf("Select the Categeorie\n");
         printf("0-Shopping\n 1-Entertainment\n 2-General\n 3-Bills\n 4-Health\n");
         printf("Select:");
@@ -141,10 +146,9 @@ while(1){
             break;
         }
 
-       
-
         fptr=fopen("expense.txt","a");
-        if(fptr!=NULL){ printf("Remaining Budget\n");
+        if(fptr!=NULL){ 
+        printf("Remaining Budget\n");
         printf("Amount left in Shopping:%d\n",B.Shopping);
         printf("Amount left in Entertainment:%d\n",B.Entertainment);
         printf("Amount left in General:%d\n",B.General);
@@ -155,10 +159,21 @@ while(1){
         fclose(fptr);
         }
 
-        printf("Do you wnat to continue YES(Y) OR NO(N):");
-        scanf(" %c",&decision);
+        do{
+            printf("Do you wnat to continue YES(Y/y) OR NO(N/n):");
+            scanf(" %c",&decision);
+
+            if(decision=='Y' || decision=='y'){
+                printf("CONTINUING...");
+            }else if(decision=='N' || decision=='n'){
+                printf("EXITING...");
+            }else{
+                printf("INVALID");
+            }
+        } while(decision!='Y' && decision!='y' && decision!='N' && decision!='n');
     }
         break;
+        
         case 2:
         printf("Remaining Budget\n");
         printf("Amount left in Shopping:%d\n",B.Shopping);
@@ -170,7 +185,7 @@ while(1){
         break;
 
         case 3:
-        printf("Exit");
+        printf("EXIT");
         return 0;
 
         default:
