@@ -1,3 +1,4 @@
+// EXPENSE TRACKER
 #include<stdio.h>
 
 enum Categeories{
@@ -24,7 +25,7 @@ int Health;
 
 
 int main(){
-    printf("EXPENSE TRACKER\n");
+    printf("EXPENSE TRACKER!!!\n");
 
     char decision;
     Budget B;
